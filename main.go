@@ -1,41 +1,21 @@
-// GeoIP generator
-//
-// Before running this file, the GeoIP database must be downloaded and present.
-// To download GeoIP database: https://dev.maxmind.com/geoip/geoip2/geolite2/
-// Inside you will find block files for IPv4 and IPv6 and country code mapping.
 package main
 
 import (
-	"flag"
 	"log"
 
-	"github.com/Loyalsoldier/geoip/lib"
+	"github.com/spf13/cobra"
 )
 
-var (
-	list       = flag.Bool("l", false, "List all available input and output formats")
-	configFile = flag.String("c", "config.json", "URI of the JSON format config file, support both local file path and remote HTTP(S) URL")
-)
+var rootCmd = &cobra.Command{
+	Use:   "geoip",
+	Short: "geoip is a convenient tool to merge, convert and lookup IP & CIDR from various formats of geoip data.",
+	CompletionOptions: cobra.CompletionOptions{
+		HiddenDefaultCmd: true,
+	},
+}
 
 func main() {
-	flag.Parse()
-
-	if *list {
-		lib.ListInputConverter()
-		lib.ListOutputConverter()
-		return
-	}
-
-	instance, err := lib.NewInstance()
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	if err := instance.Init(*configFile); err != nil {
-		log.Fatal(err)
-	}
-
-	if err := instance.Run(); err != nil {
+	if err := rootCmd.Execute(); err != nil {
 		log.Fatal(err)
 	}
 }
