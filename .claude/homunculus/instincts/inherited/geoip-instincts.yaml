@@ -1,0 +1,650 @@
+# Instincts generated from https://github.com/sha7dowXX/geoip
+# Generated: 2026-05-12T02:22:56.336Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: geoip-commit-conventional
+trigger: "when writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: https://github.com/sha7dowXX/geoip
+---
+
+# Geoip Commit Conventional
+
+## Action
+
+Use conventional commit format with prefixes: feat, chore, fix, docs, release
+
+## Evidence
+
+- 100 commits analyzed
+- Detected conventional commit pattern
+- Examples: Feat: refine telegram CIDR, Chore: update dependencies
+
+---
+id: geoip-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/sha7dowXX/geoip
+---
+
+# Geoip Commit Length
+
+## Action
+
+Keep commit messages concise (~42 characters)
+
+## Evidence
+
+- Average commit message length: 42 chars
+- Based on 100 commits
+
+---
+id: geoip-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/sha7dowXX/geoip
+---
+
+# Geoip Naming Files
+
+## Action
+
+Use snake_case naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: snake_case
+
+---
+id: geoip-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/sha7dowXX/geoip
+---
+
+# Geoip Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: geoip-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/sha7dowXX/geoip
+---
+
+# Geoip Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: geoip-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/sha7dowXX/geoip
+---
+
+# Geoip Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: geoip-workflow-feature-development
+trigger: "when implementing a new feature"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/sha7dowXX/geoip
+---
+
+# Geoip Workflow Feature Development
+
+## Action
+
+Follow the feature-development workflow:
+1. Add feature implementation
+2. Add tests for feature
+3. Update documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~11x per month
+- Files: **/*.test.*
+
+---
+id: geoip-workflow-update-go-dependencies
+trigger: "when doing update go dependencies"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/sha7dowXX/geoip
+---
+
+# Geoip Workflow Update Go Dependencies
+
+## Action
+
+Follow the update-go-dependencies workflow:
+1. Edit go.mod and go.sum to update dependencies
+2. Commit changes with a message indicating dependency update
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: go.mod, go.sum
+
+---
+id: geoip-workflow-update-github-actions-workflow
+trigger: "when doing update github actions workflow"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/sha7dowXX/geoip
+---
+
+# Geoip Workflow Update Github Actions Workflow
+
+## Action
+
+Follow the update-github-actions-workflow workflow:
+1. Edit .github/workflows/build.yml to update actions or workflow logic
+2. Commit changes with a message indicating workflow update
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: .github/workflows/build.yml
+
+---
+id: geoip-workflow-add-or-refine-cidr-list
+trigger: "when doing add or refine cidr list"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/sha7dowXX/geoip
+---
+
+# Geoip Workflow Add Or Refine Cidr List
+
+## Action
+
+Follow the add-or-refine-cidr-list workflow:
+1. Edit config.json or plugin/special/private.go to update CIDR/IP lists
+2. Commit changes with a message referencing the provider or private list
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: config.json, plugin/special/private.go
+
+---
+id: geoip-workflow-add-new-command-or-feature
+trigger: "when doing add new command or feature"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/sha7dowXX/geoip
+---
+
+# Geoip Workflow Add New Command Or Feature
+
+## Action
+
+Follow the add-new-command-or-feature workflow:
+1. Add new .go source files for the command/feature (e.g., merge.go, lookup.go, plugin/...)
+2. Update README.md to document the new feature/command
+3. Edit or add related files (e.g., config-example.json, lib/...) as needed
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: README.md, *.go, config-example.json
+
+---
+id: geoip-workflow-fix-bug-in-plugin-or-lib
+trigger: "when doing fix bug in plugin or lib"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/sha7dowXX/geoip
+---
+
+# Geoip Workflow Fix Bug In Plugin Or Lib
+
+## Action
+
+Follow the fix-bug-in-plugin-or-lib workflow:
+1. Edit plugin or lib source files to fix the bug
+2. Commit with a message describing the fix
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: plugin/*/*.go, lib/*.go
+
+---
+id: geoip-workflow-add-or-update-plaintext-format-support
+trigger: "when doing add or update plaintext format support"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/sha7dowXX/geoip
+---
+
+# Geoip Workflow Add Or Update Plaintext Format Support
+
+## Action
+
+Follow the add-or-update-plaintext-format-support workflow:
+1. Edit plugin/plaintext/*.go to add or refine format support
+2. Update config-example.json if new options are added
+3. Commit with a message describing the plaintext format change
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: plugin/plaintext/*.go, config-example.json
+
+---
+id: geoip-workflow-release-config-and-workflow-update
+trigger: "when doing release config and workflow update"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/sha7dowXX/geoip
+---
+
+# Geoip Workflow Release Config And Workflow Update
+
+## Action
+
+Follow the release-config-and-workflow-update workflow:
+1. Edit config.json to update output options or directories
+2. Optionally edit .github/workflows/build.yml for build changes
+3. Commit with a message indicating a release or config update
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: config.json, .github/workflows/build.yml
+
+---
+id: geoip-instinct-file-naming
+trigger: "When creating or renaming a file"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: sha7dowXX/geoip
+---
+
+# Geoip Instinct File Naming
+
+## Action
+
+Use snake_case for file names
+
+## Evidence
+
+- Pattern in files: plugin/special/private.go, lib/utils.go
+
+---
+id: geoip-instinct-function-naming
+trigger: "When defining a function"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: sha7dowXX/geoip
+---
+
+# Geoip Instinct Function Naming
+
+## Action
+
+Use camelCase for function names
+
+## Evidence
+
+- Pattern in Go source files
+- Go naming conventions in codebase
+
+---
+id: geoip-instinct-class-naming
+trigger: "When defining a struct or type that acts as a class"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: sha7dowXX/geoip
+---
+
+# Geoip Instinct Class Naming
+
+## Action
+
+Use PascalCase for struct/type names
+
+## Evidence
+
+- Pattern in Go source files
+- Go naming conventions in codebase
+
+---
+id: geoip-instinct-constant-naming
+trigger: "When declaring a constant"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: sha7dowXX/geoip
+---
+
+# Geoip Instinct Constant Naming
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for constant names
+
+## Evidence
+
+- Pattern in Go source files
+- Go naming conventions in codebase
+
+---
+id: geoip-instinct-import-style
+trigger: "When importing modules"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: sha7dowXX/geoip
+---
+
+# Geoip Instinct Import Style
+
+## Action
+
+Use relative import paths
+
+## Evidence
+
+- Pattern in Go source files
+
+---
+id: geoip-instinct-export-style
+trigger: "When exporting functions or types"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: sha7dowXX/geoip
+---
+
+# Geoip Instinct Export Style
+
+## Action
+
+Use named exports (export only what is needed)
+
+## Evidence
+
+- Pattern in Go source files
+
+---
+id: geoip-instinct-test-location
+trigger: "When adding tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: sha7dowXX/geoip
+---
+
+# Geoip Instinct Test Location
+
+## Action
+
+Place test files in a separate test location (not inside src folders)
+
+## Evidence
+
+- Architecture pattern: testLocation is separate
+
+---
+id: geoip-instinct-test-pattern
+trigger: "When implementing a new feature"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: sha7dowXX/geoip
+---
+
+# Geoip Instinct Test Pattern
+
+## Action
+
+Add corresponding tests for the feature, typically in files matching **/*.test.*
+
+## Evidence
+
+- feature-development workflow
+- filesInvolved: **/*.test.*
+
+---
+id: geoip-instinct-commit-format
+trigger: "When making a commit"
+confidence: 0.95
+domain: git
+source: repo-analysis
+source_repo: sha7dowXX/geoip
+---
+
+# Geoip Instinct Commit Format
+
+## Action
+
+Use Conventional Commits format with prefixes: feat, chore, fix, docs, release, refactor, refine
+
+## Evidence
+
+- Pattern in commit examples
+- Conventional commit prefixes in commit history
+
+---
+id: geoip-instinct-commit-length
+trigger: "When writing a commit message"
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: sha7dowXX/geoip
+---
+
+# Geoip Instinct Commit Length
+
+## Action
+
+Keep the commit message concise, around 42 characters on average
+
+## Evidence
+
+- Average commit message length: 42
+
+---
+id: geoip-instinct-update-go-dependencies
+trigger: "When someone wants to update project dependencies or bump library versions"
+confidence: 0.98
+domain: workflow
+source: repo-analysis
+source_repo: sha7dowXX/geoip
+---
+
+# Geoip Instinct Update Go Dependencies
+
+## Action
+
+Edit go.mod and go.sum to update dependencies, then commit with a message indicating dependency update
+
+## Evidence
+
+- update-go-dependencies workflow
+- Commits: Chore: update dependencies
+
+---
+id: geoip-instinct-update-github-actions-workflow
+trigger: "When someone wants to upgrade CI/CD workflow or fix build issues"
+confidence: 0.97
+domain: workflow
+source: repo-analysis
+source_repo: sha7dowXX/geoip
+---
+
+# Geoip Instinct Update Github Actions Workflow
+
+## Action
+
+Edit .github/workflows/build.yml to update actions or workflow logic, then commit with a message indicating workflow update
+
+## Evidence
+
+- update-github-actions-workflow workflow
+- Commits: CI: use the same Go version as go.mod file
+
+---
+id: geoip-instinct-add-or-refine-cidr-list
+trigger: "When someone wants to update IP ranges for providers or private networks"
+confidence: 0.93
+domain: workflow
+source: repo-analysis
+source_repo: sha7dowXX/geoip
+---
+
+# Geoip Instinct Add Or Refine Cidr List
+
+## Action
+
+Edit config.json or plugin/special/private.go to update CIDR/IP lists, then commit with a message referencing the provider or private list
+
+## Evidence
+
+- add-or-refine-cidr-list workflow
+- Commits: Feat: refine telegram CIDR
+
+---
+id: geoip-instinct-add-new-command-or-feature
+trigger: "When someone wants to introduce a new CLI command or significant feature"
+confidence: 0.92
+domain: workflow
+source: repo-analysis
+source_repo: sha7dowXX/geoip
+---
+
+# Geoip Instinct Add New Command Or Feature
+
+## Action
+
+Add new .go source files for the command/feature, update README.md, and edit or add related files as needed
+
+## Evidence
+
+- add-new-command-or-feature workflow
+- Commits: Add new .go source files for the command/feature
+
+---
+id: geoip-instinct-fix-bug-in-plugin-or-lib
+trigger: "When someone finds and fixes a bug in how data is parsed or handled"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: sha7dowXX/geoip
+---
+
+# Geoip Instinct Fix Bug In Plugin Or Lib
+
+## Action
+
+Edit plugin or lib source files to fix the bug, then commit with a message describing the fix
+
+## Evidence
+
+- fix-bug-in-plugin-or-lib workflow
+- Commits: Fix: private CIDR list missing IPv6 multicast address (#112)
+
+---
+id: geoip-instinct-add-or-update-plaintext-format-support
+trigger: "When someone wants to improve or extend plaintext format handling"
+confidence: 0.88
+domain: workflow
+source: repo-analysis
+source_repo: sha7dowXX/geoip
+---
+
+# Geoip Instinct Add Or Update Plaintext Format Support
+
+## Action
+
+Edit plugin/plaintext/*.go to add or refine format support, update config-example.json if new options are added, then commit with a message describing the plaintext format change
+
+## Evidence
+
+- add-or-update-plaintext-format-support workflow
+- Commits: Edit plugin/plaintext/*.go to add or refine format support
+
+---
+id: geoip-instinct-release-config-and-workflow-update
+trigger: "When someone wants to release a new output type or change output directory/configuration"
+confidence: 0.86
+domain: workflow
+source: repo-analysis
+source_repo: sha7dowXX/geoip
+---
+
+# Geoip Instinct Release Config And Workflow Update
+
+## Action
+
+Edit config.json to update output options or directories, optionally edit .github/workflows/build.yml for build changes, then commit with a message indicating a release or config update
+
+## Evidence
+
+- release-config-and-workflow-update workflow
+- Commits: Edit config.json to update output options or directories
+
